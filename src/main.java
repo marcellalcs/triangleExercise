@@ -86,7 +86,23 @@ public class main {
         printAsteristksInverseIsoscelesTriangle(n);
     }
 
+    public static void fizzBuzz(int n){
+        int m = 1;
+        while (m <= n){
+            if(m%3 == 0 && m%5 == 0){
+                System.out.println("FizzBuzz");
+            }else if(m%3 == 0){
+                System.out.println("Fizz");
+            }else if(m%5 == 0){
+                System.out.println("Buzz");
+            }else{
+                System.out.println(m);
+            }
+            m++;
+        }
+    }
+
     public static void main (String args []){
-       printDimmondName(3, "Ana Catarina");
+        fizzBuzz(15);
     }
 }
