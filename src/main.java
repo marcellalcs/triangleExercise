@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class main {
     public static void printAsteristks(){
@@ -102,7 +103,34 @@ public class main {
         }
     }
 
+    public static ArrayList <Integer> generate(int n){
+        ArrayList <Integer> fatores = new ArrayList<Integer>();
+
+        if(n == 1){
+            return fatores;
+        }else{
+            int m = 2;
+            while(m <= n) {
+                if (n % m == 0) {
+                    if (!fatores.contains(m))
+                        fatores.add(m);
+                    n = n / m;
+                }
+                m++;
+            }
+
+            if(fatores.isEmpty()){
+                fatores.add(n);
+            }
+
+            Collections.sort(fatores);
+        }
+        return fatores;
+    }
+
     public static void main (String args []){
-        fizzBuzz(15);
+        ArrayList <Integer> fatores = generate(90);
+        for(int i: fatores)
+            System.out.print(i + " ");
     }
 }
